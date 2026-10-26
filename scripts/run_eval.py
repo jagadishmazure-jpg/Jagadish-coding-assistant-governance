@@ -1,13 +1,17 @@
 """SYNTHETIC fleet + labelled snippets (self-written regression set); measured on that synthetic data."""
-import json, pathlib, sys
+import json
+import pathlib
+import sys
 from collections import Counter
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from cag.audit_config import audit  # noqa: E402
-from cag.fleet import COMMANDS, SECRET_SNIPPETS, fleet  # noqa: E402
-from cag.gate import Gate  # noqa: E402
-from cag.policy import load  # noqa: E402
-from cag.secrets import scan  # noqa: E402
+from cag.audit_config import audit
+from cag.fleet import COMMANDS, SECRET_SNIPPETS, fleet
+from cag.gate import Gate
+from cag.policy import load
+from cag.secrets import scan
+
 
 def main():
     p = load()

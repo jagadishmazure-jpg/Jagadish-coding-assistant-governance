@@ -1,5 +1,7 @@
 import json
+
 import pytest
+
 from cag.audit_config import audit
 from cag.fleet import COMMANDS, SECRET_SNIPPETS, fleet
 from cag.gate import Gate
