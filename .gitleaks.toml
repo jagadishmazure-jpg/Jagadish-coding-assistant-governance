@@ -1,0 +1,6 @@
+# Extend default rules; allow the deliberately fake secrets used as labelled test fixtures.
+[extend]
+useDefault = true
+[allowlist]
+description = "fake secrets used as detector test fixtures"
+paths = ['''src/cag/fleet\.py''', '''tests/.*\.py''']

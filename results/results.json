@@ -1,0 +1,153 @@
+{
+  "label": "SYNTHETIC fleet and self-written labelled snippets (regression check, not a benchmark)",
+  "sample": "40 configs, 18 snippets, 12 commands",
+  "metrics": {
+    "Developer configs audited": 40,
+    "Fully compliant configs": "26/40 (65%)",
+    "Violations by type": "auto_approve_enabled=5, bypasses_gateway=3, personal_api_key=3, unapproved_client=2, unapproved_mcp_server=4",
+    "Secret scanner precision": "8/9",
+    "Secret scanner recall": "8/9",
+    "Command policy decisions matching expected": "12/12",
+    "Gate demo requests denied": "4/5",
+    "Blocked files dropped from context": 1
+  },
+  "findings": {
+    "dev00": [],
+    "dev01": [],
+    "dev02": [],
+    "dev03": [],
+    "dev04": [],
+    "dev05": [],
+    "dev06": [
+      "bypasses_gateway",
+      "personal_api_key"
+    ],
+    "dev07": [],
+    "dev08": [],
+    "dev09": [],
+    "dev10": [],
+    "dev11": [
+      "unapproved_mcp_server"
+    ],
+    "dev12": [],
+    "dev13": [
+      "auto_approve_enabled"
+    ],
+    "dev14": [],
+    "dev15": [],
+    "dev16": [
+      "bypasses_gateway",
+      "personal_api_key"
+    ],
+    "dev17": [
+      "auto_approve_enabled"
+    ],
+    "dev18": [
+      "unapproved_client"
+    ],
+    "dev19": [],
+    "dev20": [],
+    "dev21": [
+      "unapproved_mcp_server"
+    ],
+    "dev22": [],
+    "dev23": [
+      "unapproved_mcp_server"
+    ],
+    "dev24": [],
+    "dev25": [
+      "unapproved_mcp_server"
+    ],
+    "dev26": [
+      "bypasses_gateway",
+      "personal_api_key"
+    ],
+    "dev27": [],
+    "dev28": [
+      "auto_approve_enabled"
+    ],
+    "dev29": [
+      "auto_approve_enabled"
+    ],
+    "dev30": [],
+    "dev31": [],
+    "dev32": [
+      "unapproved_client"
+    ],
+    "dev33": [],
+    "dev34": [],
+    "dev35": [],
+    "dev36": [
+      "auto_approve_enabled"
+    ],
+    "dev37": [],
+    "dev38": [],
+    "dev39": []
+  },
+  "gate": [
+    {
+      "dev": "dev01",
+      "team": "platform",
+      "client": "ide-assistant",
+      "model": "code-large",
+      "decision": "allow",
+      "reasons": [],
+      "files_dropped": [
+        ".env"
+      ],
+      "secret_findings": {}
+    },
+    {
+      "dev": "dev02",
+      "team": "contractors",
+      "client": "cli-agent",
+      "model": "code-large",
+      "decision": "deny",
+      "reasons": [
+        "model_not_allowed"
+      ],
+      "files_dropped": [],
+      "secret_findings": {}
+    },
+    {
+      "dev": "dev03",
+      "team": "platform",
+      "client": "unvetted-desktop-app",
+      "model": "code-small",
+      "decision": "deny",
+      "reasons": [
+        "unapproved_client"
+      ],
+      "files_dropped": [],
+      "secret_findings": {}
+    },
+    {
+      "dev": "dev04",
+      "team": "platform",
+      "client": "cli-agent",
+      "model": "code-small",
+      "decision": "deny",
+      "reasons": [
+        "secret_in_context"
+      ],
+      "files_dropped": [],
+      "secret_findings": {
+        "cfg.py": [
+          "aws_access_key_id"
+        ]
+      }
+    },
+    {
+      "dev": "dev05",
+      "team": "contractors",
+      "client": "cli-agent",
+      "model": "code-small",
+      "decision": "deny",
+      "reasons": [
+        "budget_exceeded"
+      ],
+      "files_dropped": [],
+      "secret_findings": {}
+    }
+  ]
+}

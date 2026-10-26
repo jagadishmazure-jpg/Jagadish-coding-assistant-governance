@@ -1,0 +1,11 @@
+{
+  "gateway_base_url": "https://ai-gateway.quillstone.example/v1",
+  "approved_clients": ["ide-assistant", "cli-agent", "desktop-chat"],
+  "allowed_mcp_servers": ["repo-search", "issue-tracker", "docs"],
+  "team_models": {"platform": ["code-large", "code-small"], "contractors": ["code-small"]},
+  "monthly_tokens": {"platform": 2000000, "contractors": 300000},
+  "blocked_context_globs": [".env", "*.pem", "*.key", "id_rsa*", "*.pfx", "secrets/*", "*.tfstate"],
+  "command_deny": ["rm -rf /", "rm -rf ~", "curl * | sh", "wget * | sh", "git push --force*", "chmod -R 777*", "* > /dev/sda*", "terraform apply*", "kubectl delete*"],
+  "command_needs_approval": ["git push*", "npm publish*", "pip install*", "docker run*", "terraform plan*"],
+  "auto_approve_allowed": false
+}
