@@ -1,6 +1,7 @@
 """Secret detection for files/snippets before they are sent to an assistant as context.
 Rules: known key formats + a Shannon-entropy check for quoted tokens near secret-like names."""
-import math, re
+import math
+import re
 
 RULES = {
     "aws_access_key_id": re.compile(r"\b(AKIA|ASIA)[0-9A-Z]{16}\b"),

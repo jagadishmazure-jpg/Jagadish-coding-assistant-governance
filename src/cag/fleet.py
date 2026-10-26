@@ -1,6 +1,7 @@
 """SYNTHETIC fleet of developer configs + labelled secret snippets + agent command proposals."""
 import random
 
+
 def fleet(seed=5, n=40):
     rng = random.Random(seed)
     out = []

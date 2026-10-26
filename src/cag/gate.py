@@ -1,7 +1,9 @@
 """Gateway-side gate for coding-assistant requests: client, model, budget, context files, secrets, commands."""
 from collections import defaultdict
+
 from .policy import command_decision, path_blocked
 from .secrets import scan
+
 
 class Gate:
     def __init__(self, policy: dict):

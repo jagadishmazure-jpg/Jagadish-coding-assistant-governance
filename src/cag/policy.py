@@ -1,5 +1,7 @@
 """Load the org policy for coding assistants and desktop AI apps (fictional org: Quillstone Labs)."""
-import fnmatch, json, pathlib
+import fnmatch
+import json
+import pathlib
 
 DEFAULT = pathlib.Path(__file__).resolve().parents[2] / "policies" / "policy.json"
 
